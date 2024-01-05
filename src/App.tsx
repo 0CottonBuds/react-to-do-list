@@ -1,4 +1,4 @@
-import Layout from "./Components/Layout";
+import Layout from "./Components/ScreenLayout";
 function App() {
   return (
     <div className="app">
