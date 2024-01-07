@@ -21,9 +21,16 @@ export default function MainContent() {
     return new TodoItem(item, "test description", 1);
   });
 
+  function HandleSetIndex(index: number) {
+    setCurrentSelectedItemIndex(index);
+  }
+
   return (
     <div className="main-content">
-      <TodoListContainer ToDos={toDoItems}></TodoListContainer>
+      <TodoListContainer
+        ToDos={toDoItems}
+        HandleSetIndex={HandleSetIndex}
+      ></TodoListContainer>
       <TodoListItemInformationContainer
         currentItemSelectedIndex={currentSelectedItemIndex}
         Todos={toDoItems}
