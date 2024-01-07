@@ -1,3 +1,4 @@
+import { useState } from "react";
 import TodoListContainer from "./TodoListContainer";
 import TodoListItemInformationContainer from "./TodoListItemInformationContainer";
 
@@ -14,8 +15,8 @@ export class TodoItem {
 }
 
 export default function MainContent() {
+  const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(-1);
   const toDoList = ["dry clothes", "study code", "run"];
-
   const toDoItems = toDoList.map((item) => {
     return new TodoItem(item, "test description", 1);
   });
@@ -23,7 +24,10 @@ export default function MainContent() {
   return (
     <div className="main-content">
       <TodoListContainer ToDos={toDoItems}></TodoListContainer>
-      <TodoListItemInformationContainer></TodoListItemInformationContainer>
+      <TodoListItemInformationContainer
+        currentItemSelectedIndex={currentSelectedItemIndex}
+        Todos={toDoItems}
+      ></TodoListItemInformationContainer>
     </div>
   );
 }
