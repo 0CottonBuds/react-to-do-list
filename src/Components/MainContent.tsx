@@ -16,7 +16,14 @@ export class TodoItem {
 
 export default function MainContent() {
   const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(-1);
-  const toDoList = ["dry clothes", "study code", "run"];
+  const toDoList = [
+    "dry clothes",
+    "study code",
+    "run",
+    "item 2",
+    "item 3",
+    "Item 4",
+  ];
   const toDoItems = toDoList.map((item) => {
     return new TodoItem(item, "test description", 1);
   });
