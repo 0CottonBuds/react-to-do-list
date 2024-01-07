@@ -1,10 +1,9 @@
 import { TodoItem } from "./MainContent";
-import TodoListItem from "./TodoListItem";
-interface props {
+interface TodoListContainerProps {
   ToDos: TodoItem[];
 }
 
-export default function TodoListContainer({ ToDos }: props) {
+export default function TodoListContainer({ ToDos }: TodoListContainerProps) {
   return (
     <div className="todo-list-container">
       <ul>
@@ -13,5 +12,16 @@ export default function TodoListContainer({ ToDos }: props) {
         })}
       </ul>
     </div>
+  );
+}
+
+interface TodoListItemProps {
+  title: string;
+}
+function TodoListItem({ title }: TodoListItemProps) {
+  return (
+    <li>
+      <button>{title}</button>
+    </li>
   );
 }
