@@ -6,7 +6,6 @@ interface TodoListItemInformationContainerProps {
 
 export default function TodoListItemInformationContainer({
   currentItemSelectedIndex,
-  Todos,
 }: TodoListItemInformationContainerProps) {
   return (
     <div className="todo-list-item-infomarion-container">
