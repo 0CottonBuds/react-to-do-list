@@ -1,5 +1,6 @@
+import { ToDoItem } from "./MainContent";
 interface props {
-  ToDos: string[];
+  ToDos: ToDoItem[];
 }
 
 export default function TodoListContainer({ ToDos }: props) {
@@ -7,7 +8,7 @@ export default function TodoListContainer({ ToDos }: props) {
     <div className="todo-list-container">
       <ul>
         {ToDos.map((item) => {
-          return <li>{item}</li>;
+          return <li>{item.title}</li>;
         })}
       </ul>
     </div>
