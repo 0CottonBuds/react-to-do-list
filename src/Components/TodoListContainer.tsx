@@ -1,7 +1,7 @@
-import { ToDoItem } from "./MainContent";
+import { TodoItem } from "./MainContent";
 import TodoListItem from "./TodoListItem";
 interface props {
-  ToDos: ToDoItem[];
+  ToDos: TodoItem[];
 }
 
 export default function TodoListContainer({ ToDos }: props) {

@@ -1,7 +1,7 @@
 import TodoListContainer from "./TodoListContainer";
 import TodoListItemInformationContainer from "./TodoListItemInformationContainer";
 
-export class ToDoItem {
+export class TodoItem {
   title: string;
   description: string;
   priorityLevel: number;
@@ -17,7 +17,7 @@ export default function MainContent() {
   const toDoList = ["dry clothes", "study code", "run"];
 
   const toDoItems = toDoList.map((item) => {
-    return new ToDoItem(item, "test description", 1);
+    return new TodoItem(item, "test description", 1);
   });
 
   return (
