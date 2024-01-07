@@ -8,7 +8,11 @@ export default function TodoListContainer({ ToDos }: props) {
     <div className="todo-list-container">
       <ul>
         {ToDos.map((item) => {
-          return <li>{item.title}</li>;
+          return (
+            <li>
+              <button>{item.title}</button>
+            </li>
+          );
         })}
       </ul>
     </div>
