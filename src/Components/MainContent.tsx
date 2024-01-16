@@ -2,6 +2,7 @@ import { useState } from "react";
 import TodoListContainer from "./TodoListContainer";
 import TodoListItemInformationContainer from "./TodoListItemInformationContainer";
 import todoJson from "./TodoList.json";
+import { arrayBuffer } from "stream/consumers";
 
 export class TodoItem {
   title: string;
@@ -15,12 +16,30 @@ export class TodoItem {
   }
 }
 
+async function readJsonFile(filePath: string): Promise<String> {
+  try {
+    const response = await fetch(filePath);
+
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch ${filePath}. Status: ${response.status}`
+      );
+    }
+
+    const fileContent = await response.text();
+    return fileContent;
+  } catch (error) {
+    console.error(`Error reading file ${filePath}:`, error);
+    return "";
+  }
+}
+
 export default function MainContent() {
-  const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(-1);
+  const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(0);
 
   // get json and add map it to create an array of todoitems
   const jsonString = todoJson;
-  let todoItems: TodoItem[] = jsonString.todos.map((todo) => {
+  let todoItems: TodoItem[] = jsonString.todos.map((todo, index) => {
     return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
 
