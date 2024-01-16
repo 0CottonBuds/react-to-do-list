@@ -2,7 +2,6 @@ import { useState } from "react";
 import TodoListContainer from "./TodoListContainer";
 import TodoListItemInformationContainer from "./TodoListItemInformationContainer";
 import todoJson from "./TodoList.json";
-import { arrayBuffer } from "stream/consumers";
 
 export class TodoItem {
   title: string;
@@ -16,29 +15,12 @@ export class TodoItem {
   }
 }
 
-async function readJsonFile(filePath: string): Promise<String> {
-  try {
-    const response = await fetch(filePath);
-
-    if (!response.ok) {
-      throw new Error(
-        `Failed to fetch ${filePath}. Status: ${response.status}`
-      );
-    }
-
-    const fileContent = await response.text();
-    return fileContent;
-  } catch (error) {
-    console.error(`Error reading file ${filePath}:`, error);
-    return "";
-  }
-}
-
 export default function MainContent() {
   const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(-1);
 
+  // get json and add map it to create an array of todoitems
   const jsonString = todoJson;
-  let toDoItems: TodoItem[] = jsonString.todos.map((todo, index) => {
+  let todoItems: TodoItem[] = jsonString.todos.map((todo) => {
     return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
 
@@ -49,12 +31,12 @@ export default function MainContent() {
   return (
     <div className="main-content">
       <TodoListContainer
-        ToDos={toDoItems}
+        ToDos={todoItems}
         HandleSetIndex={HandleSetIndex}
       ></TodoListContainer>
       <TodoListItemInformationContainer
         currentItemSelectedIndex={currentSelectedItemIndex}
-        Todos={toDoItems}
+        Todos={todoItems}
       ></TodoListItemInformationContainer>
     </div>
   );
