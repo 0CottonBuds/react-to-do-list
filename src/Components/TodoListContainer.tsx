@@ -10,10 +10,11 @@ export default function TodoListContainer({
 }: TodoListContainerProps) {
   return (
     <div className="todo-list-container">
-      <ul>
+      <ul key={"todo-list-container"}>
         {ToDos.map((item, index) => {
           return (
             <TodoListItem
+              key={index}
               title={item.title}
               index={index}
               HandleSetIndex={HandleSetIndex}

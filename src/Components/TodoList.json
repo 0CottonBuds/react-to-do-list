@@ -1,0 +1,29 @@
+{
+    "todos": [
+        {
+            "title": "Practice programming",
+            "description": "test description",
+            "priorityLevel": 1
+        },
+        {
+            "title": "do assignment",
+            "description": "test description",
+            "priorityLevel": 1
+        },
+        {
+            "title": "return book",
+            "description": "test description",
+            "priorityLevel": 1
+        },
+        {
+            "title": "get some cofee",
+            "description": "test description",
+            "priorityLevel": 1
+        },
+        {
+            "title": "I ran out of things to do",
+            "description": "test description",
+            "priorityLevel": 1
+        }
+    ]
+}

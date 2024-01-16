@@ -1,7 +1,8 @@
 import { useState } from "react";
 import TodoListContainer from "./TodoListContainer";
 import TodoListItemInformationContainer from "./TodoListItemInformationContainer";
-import * as fs from "fs";
+import todoJson from "./TodoList.json";
+import { arrayBuffer } from "stream/consumers";
 
 export class TodoItem {
   title: string;
@@ -15,18 +16,30 @@ export class TodoItem {
   }
 }
 
+async function readJsonFile(filePath: string): Promise<String> {
+  try {
+    const response = await fetch(filePath);
+
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch ${filePath}. Status: ${response.status}`
+      );
+    }
+
+    const fileContent = await response.text();
+    return fileContent;
+  } catch (error) {
+    console.error(`Error reading file ${filePath}:`, error);
+    return "";
+  }
+}
+
 export default function MainContent() {
   const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(-1);
-  const toDoList = [
-    "dry clothes",
-    "study code",
-    "run",
-    "item 2",
-    "item 3",
-    "Item 4",
-  ];
-  const toDoItems = toDoList.map((item) => {
-    return new TodoItem(item, "test description", 1);
+
+  const jsonString = todoJson;
+  let toDoItems: TodoItem[] = jsonString.todos.map((todo, index) => {
+    return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
 
   function HandleSetIndex(index: number) {
