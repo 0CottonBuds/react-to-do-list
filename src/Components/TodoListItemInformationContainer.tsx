@@ -1,4 +1,3 @@
-import { Console } from "console";
 import { TodoItem } from "./MainContent";
 interface TodoListItemInformationContainerProps {
   currentItemSelectedIndex: number;
