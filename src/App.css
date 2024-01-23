@@ -10,3 +10,13 @@ html,body
   background-color: green;
   padding: 15px; 
 }
+ 
+.todo-list-container {
+  float: left;
+  width: 50%;
+}
+
+.todo-list-item-infomarion-container{
+  float: right;
+  width: 50%;
+}
