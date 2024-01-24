@@ -12,11 +12,13 @@ html,body
 }
  
 .todo-list-container {
+  font-family: Arial, Helvetica, sans-serif;
   float: left;
-  width: 50%;
+  width: 40%;
 }
 
 .todo-list-item-infomarion-container{
+  font-family: Arial, Helvetica, sans-serif;
   float: right;
-  width: 50%;
+  width: 60%;
 }
