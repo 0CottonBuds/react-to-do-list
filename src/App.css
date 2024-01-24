@@ -7,6 +7,7 @@ html,body
     overflow-x: hidden; 
 }
 .heading{
+  font-family: Arial, Helvetica, sans-serif;
   background-color: green;
   padding: 15px; 
 }
