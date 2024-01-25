@@ -39,6 +39,14 @@ html,body
   width: 40%;
 }
 
+.todo-list-container ul{
+  line-height: 30px;
+}
+
+.todo-list-container button{
+  
+}
+
 .todo-list-item-infomarion-container{
   font-family: Arial, Helvetica, sans-serif;
   float: right;
