@@ -51,7 +51,10 @@ html,body
   color: white;
   padding-left: 10px;
   padding-right: 10px;
+}
 
+.todo-list-container button:hover{
+  background-color: #61dbfb;
 }
 
 .todo-list-item-infomarion-container{
