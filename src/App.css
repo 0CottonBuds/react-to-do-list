@@ -68,3 +68,13 @@ html,body
   float: right;
   width: 60%;
 }
+
+.add-todo-button{
+  height: 50px;
+  width: 50px;
+  aspect-ratio: 1/1;
+  position: relative;
+  float : right;
+  top: -210px;
+  left: -30px;
+}
