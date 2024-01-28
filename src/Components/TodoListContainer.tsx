@@ -1,4 +1,6 @@
 import { TodoItem } from "./MainContent";
+import Popup from "reactjs-popup";
+
 interface TodoListContainerProps {
   ToDos: TodoItem[];
   HandleSetIndex: (index: number) => void;
@@ -22,7 +24,15 @@ export default function TodoListContainer({
           );
         })}
       </ul>
-      <button className="add-todo-button">+</button>
+      <Popup
+        trigger={<button className="add-todo-button">+</button>}
+        modal
+        nested
+      >
+        <div className="add-todo-popup-container">
+          <text></text>
+        </div>
+      </Popup>
     </div>
   );
 }

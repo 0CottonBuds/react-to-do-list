@@ -78,3 +78,14 @@ html,body
   top: -210px;
   left: -30px;
 }
+
+.add-todo-popup-container{
+  height: 90vh;
+  width: 100vh;
+  background-color: green;
+  overflow: hidden;
+  border: 2px solid  #61dbfb;
+  border-radius: 20px;
+
+  box-shadow: 0 10px #999;
+}
