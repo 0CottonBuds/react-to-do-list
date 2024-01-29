@@ -79,6 +79,16 @@ html,body
   left: -30px;
 }
 
+.blur-backdrop{
+  position: absolute;
+  top: -5000px;
+  left: -5000px;
+  height: 10000px;
+  width:  10000px;
+  backdrop-filter: blur(2px);
+  pointer-events: none  ;
+}
+
 .add-todo-popup-container{
   height: 90vh;
   width: 100vh;
@@ -88,4 +98,6 @@ html,body
   border-radius: 20px;
 
   box-shadow: 0 10px #999;
+
+  backdrop-filter: blur(10px);
 }

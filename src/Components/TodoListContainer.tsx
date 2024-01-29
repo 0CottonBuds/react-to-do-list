@@ -29,6 +29,7 @@ export default function TodoListContainer({
         modal
         nested
       >
+        <div className="blur-backdrop"></div>
         <div className="add-todo-popup-container">
           <text></text>
         </div>
