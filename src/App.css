@@ -85,8 +85,9 @@ html,body
   left: -5000px;
   height: 10000px;
   width:  10000px;
-  backdrop-filter: blur(2px);
   pointer-events: none  ;
+  background-color: black;
+  opacity: 50%;
 }
 
 .add-todo-popup-container{
@@ -97,7 +98,7 @@ html,body
   border: 2px solid  #61dbfb;
   border-radius: 20px;
 
-  box-shadow: 0 10px #999;
+  box-shadow: 0 10px #444;
 
   backdrop-filter: blur(10px);
 }
