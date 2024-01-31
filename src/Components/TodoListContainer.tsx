@@ -31,12 +31,12 @@ export default function TodoListContainer({
       >
         <div className="blur-backdrop"></div>
         <div className="add-todo-popup-container">
-          <form>
+          <form className="todo-form">
             <text>Title</text>
-            <input type="text"></input>
+            <input type="text" className="title-text-input"></input>
             <text>Description</text>
-            <textarea></textarea>
-            <input type="submit"></input>
+            <textarea className="description-text-area"></textarea>
+            <input type="submit" className="submit-button"></input>
           </form>
         </div>
       </Popup>
