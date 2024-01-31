@@ -29,15 +29,15 @@ export default function TodoListContainer({
         modal
         nested
       >
-        <div className="blur-backdrop"></div>
+        <div className="blur-backdrop clear-float "></div>
         <div className="add-todo-popup-container">
-          <form className="todo-form">
-            <text>Title</text>
+          <div className="add-todo-form">
+            <text className="popup-text">Title</text>
             <input type="text" className="title-text-input"></input>
-            <text>Description</text>
+            <text className="popup-text">Description</text>
             <textarea className="description-text-area"></textarea>
             <input type="submit" className="submit-button"></input>
-          </form>
+          </div>
         </div>
       </Popup>
     </div>
