@@ -38,6 +38,7 @@ export default function MainContent() {
         currentItemSelectedIndex={currentSelectedItemIndex}
         Todos={todoItems}
       ></TodoListItemInformationContainer>
+      <div className="clear-float"></div>
     </div>
   );
 }
