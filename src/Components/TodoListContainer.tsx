@@ -35,13 +35,13 @@ export default function TodoListContainer({
             <text className="popup-text">Title</text>
           </div>
           <input type="text" className="title-text-input"></input>
-          <div>
+          <div className="popup-text-container">
             <text className="popup-text">Description</text>
           </div>
-          <input type="textarea"></input>
+          <input type="textarea" className="description-text-area"></input>
           <input type="submit" className="submit-button"></input>
         </div>
-      </Popup>
+      </Popup>  
     </div>
   );
 }

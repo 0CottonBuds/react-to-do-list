@@ -101,6 +101,8 @@ html,body
   box-shadow: 0 10px #444;
   backdrop-filter: blur(10px);
   align-content: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .add-todo-form{
@@ -109,6 +111,14 @@ html,body
 }
 
 .popup-text-container{
+  margin-top: 30px;
+  margin-bottom: 7px;
+}
+
+.popup-text{
+  font-size: 20px;
+  margin-left: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .title-text-input{
@@ -117,8 +127,13 @@ html,body
   float: none;
 }
 
-.description-text-area{
-  float: none
+.description-text-area[type=textarea]{
+  float: none;
+  width: 80%;
+}
+
+.submit-button{
+  position: relative;
 }
 
 .clear-float{
