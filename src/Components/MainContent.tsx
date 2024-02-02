@@ -27,7 +27,7 @@ export default function MainContent() {
   function HandleSetIndex(index: number) {
     setCurrentSelectedItemIndex(index);
   }
-
+ 
   return (
     <div className="main-content">
       <TodoListContainer
