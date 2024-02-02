@@ -100,6 +100,7 @@ html,body
   border-radius: 20px;
   box-shadow: 0 10px #444;
   backdrop-filter: blur(10px);
+  align-content: center;
 }
 
 .add-todo-form{
@@ -107,18 +108,12 @@ html,body
   float: none;
 }
 
-.popup-text{
-  float: none;
-  width: 100%;
-  background-color: white;
+.popup-text-container{
 }
 
 .title-text-input{
-  flex: 1;
   width: 80%;
   height: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
   float: none;
 }
 
