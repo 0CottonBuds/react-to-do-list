@@ -38,10 +38,10 @@ export default function TodoListContainer({
           <div className="popup-text-container">
             <text className="popup-text">Description</text>
           </div>
-          <input type="textarea" className="description-text-area"></input>
+          <textarea className="description-text-area"></textarea>
           <input type="submit" className="submit-button"></input>
         </div>
-      </Popup>  
+      </Popup>
     </div>
   );
 }

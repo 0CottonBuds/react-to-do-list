@@ -119,21 +119,49 @@ html,body
   font-size: 20px;
   margin-left: 20px;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 .title-text-input{
-  width: 80%;
+  width: 94%;
   height: 30px;
   float: none;
+  align-self: center;
+  margin-left: 2.5%;
+  background-color: white;
+  border: 2px solid green;
+  border-radius: 5px;
+  font-size: 17px;
 }
 
-.description-text-area[type=textarea]{
+.title-text-input:focus{
+  outline: none !important;
+  border: 2px solid #61dbfb;
+  box-shadow: none;
+}
+
+.description-text-area{
   float: none;
-  width: 80%;
+  height: 70%;
+  width: 94%;
+  align-self: center;
+  margin-left: 2.5%;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+.description-text-area:focus{
+  outline: none !important;
+  border: 2px solid #61dbfb;
+  box-shadow: none;
+  font-size: 17px;
 }
 
 .submit-button{
-  position: relative;
+
 }
 
 .clear-float{
