@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { TodoItem } from "./MainContent";
 import Popup from "reactjs-popup";
 
@@ -10,6 +11,19 @@ export default function TodoListContainer({
   ToDos,
   HandleSetIndex,
 }: TodoListContainerProps) {
+  const [titleTextInputValue, setTitleTextInputValue] = useState("");
+  const [descriptionTextInputValue, setDescriptionTextInputValue] = useState("");
+
+  function onTitleTextInputChange(event: Event) {
+    // @ts-expect-error
+    setTitleTextInputValue(event.target.value);
+  }
+
+  function onDescriptionTextInputChange(event: Event) {
+    // @ts-expect-error
+    setDescriptionTextInputValue(event.target.value);
+  }
+
   return (
     <div className="todo-list-container">
       <ul key={"todo-list-container"}>
@@ -34,11 +48,22 @@ export default function TodoListContainer({
           <div className="popup-text-container">
             <text className="popup-text">Title</text>
           </div>
-          <input type="text" className="title-text-input"></input>
+          <input
+            type="text"
+            className="title-text-input"
+            value={titleTextInputValue}
+            // @ts-expect-error
+            onChange={onTitleTextInputChange}
+          ></input>
           <div className="popup-text-container">
             <text className="popup-text">Description</text>
           </div>
-          <textarea className="description-text-area"></textarea>
+          <textarea
+            className="description-text-area"
+            value={descriptionTextInputValue}
+            // @ts-expect-error
+            onChange={onDescriptionTextInputChange}
+          ></textarea>
           <input type="submit" className="submit-button"></input>
         </div>
       </Popup>
