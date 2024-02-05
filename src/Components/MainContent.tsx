@@ -15,9 +15,7 @@ export class TodoItem {
   }
 }
 
-function saveTodoItemToJson(todoItems: TodoItem[]){
-
-}
+function saveTodoItemToJson(todoItems: TodoItem[]) {}
 
 export default function MainContent() {
   const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(0);
@@ -28,19 +26,20 @@ export default function MainContent() {
     return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
 
-  function addTodoItem(){
-
+  function addTodoItem() {
+    saveTodoItemToJson([new TodoItem("", "", 1)]);
   }
 
   function HandleSetIndex(index: number) {
     setCurrentSelectedItemIndex(index);
   }
- 
+
   return (
     <div className="main-content">
       <TodoListContainer
         ToDos={todoItems}
         HandleSetIndex={HandleSetIndex}
+        addTodoItem={addTodoItem}
       ></TodoListContainer>
       <TodoListItemInformationContainer
         currentItemSelectedIndex={currentSelectedItemIndex}
