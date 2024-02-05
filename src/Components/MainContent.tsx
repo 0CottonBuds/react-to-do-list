@@ -15,6 +15,10 @@ export class TodoItem {
   }
 }
 
+function saveTodoItemToJson(todoItems: TodoItem[]){
+
+}
+
 export default function MainContent() {
   const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(0);
 
@@ -23,6 +27,10 @@ export default function MainContent() {
   let todoItems: TodoItem[] = jsonString.todos.map((todo) => {
     return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
+
+  function addTodoItem(){
+
+  }
 
   function HandleSetIndex(index: number) {
     setCurrentSelectedItemIndex(index);
