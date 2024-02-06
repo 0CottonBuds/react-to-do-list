@@ -27,7 +27,7 @@ export default function MainContent() {
   });
 
   function addTodoItem() {
-    saveTodoItemToJson([new TodoItem("", "", 1)]);
+    saveTodoItemToJson(todoItems);
   }
 
   function HandleSetIndex(index: number) {
