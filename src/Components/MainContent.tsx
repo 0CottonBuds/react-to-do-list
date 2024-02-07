@@ -14,7 +14,7 @@ export class TodoItem {
   }
 }
 
-function saveTodoItemToJson(todoItems: TodoItem[]) {
+function saveTodoItemsToLocalStorage(todoItems: TodoItem[]) {
   let jsonToSave = { todos: [{}] };
 
   for (let i = 0; i < todoItems.length; i++) {
@@ -34,37 +34,37 @@ function saveTodoItemToJson(todoItems: TodoItem[]) {
 export default function MainContent() {
   const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(0);
 
-  // get json and add map it to create an array of todoitems
   // @ts-expect-error
+  // get json from local storage
   const jsonString = JSON.parse(localStorage.getItem("todoItems"));
   // @ts-expect-error
+  // map it to create an array of todoitems
   let todoItems: TodoItem[] = jsonString.todos.map((todo) => {
     return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
 
   function addTodoItem(todoItem: TodoItem) {
-    todoItems.push(todoItem);
-    console.log(todoItems);
-    saveTodoItemToJson(todoItems);
+    // add todo item to end and save to local storage
+    todoItems.concat([todoItem]);
+    saveTodoItemsToLocalStorage(todoItems);
   }
 
   function removeTodoItem(index: number) {
+    // remove item by index
     const firstHalf = todoItems.slice(0, index);
     const secondHalf = todoItems.slice(index + 1);
     todoItems = firstHalf.concat(secondHalf);
-    setCurrentSelectedItemIndex(todoItems.length - 1);
-    saveTodoItemToJson(todoItems);
-  }
 
-  function HandleSetIndex(index: number) {
-    setCurrentSelectedItemIndex(index);
+    // shift the current selected index
+    setCurrentSelectedItemIndex(todoItems.length - 1);
+    saveTodoItemsToLocalStorage(todoItems);
   }
 
   return (
     <div className="main-content">
       <TodoListContainer
         ToDos={todoItems}
-        HandleSetIndex={HandleSetIndex}
+        HandleSetIndex={setCurrentSelectedItemIndex}
         addTodoItem={addTodoItem}
       ></TodoListContainer>
       <TodoListItemInformationContainer
