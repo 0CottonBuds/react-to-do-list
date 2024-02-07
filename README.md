@@ -1,9 +1,9 @@
-#React todo list
+# React todo list
 
 This is the project I used to learn the basics of react. This is not intended for use since it is buggy and
 generally shitty. Use at your own risk.
 
-#To run
+# To run
 
 run
 
