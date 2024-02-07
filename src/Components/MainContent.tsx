@@ -49,7 +49,10 @@ export default function MainContent() {
   }
 
   function removeTodoItem(index: number) {
-    todoItems.splice(index, 1);
+    const firstHalf = todoItems.slice(0, index);
+    const secondHalf = todoItems.slice(index + 1);
+    todoItems = firstHalf.concat(secondHalf);
+    setCurrentSelectedItemIndex(todoItems.length - 1);
     saveTodoItemToJson(todoItems);
   }
 
