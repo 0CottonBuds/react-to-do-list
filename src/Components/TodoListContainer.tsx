@@ -17,6 +17,8 @@ export default function TodoListContainer({
   const [descriptionTextInputValue, setDescriptionTextInputValue] =
     useState("");
 
+  const [popupOpen, setPopupOpen] = useState(false);
+
   function onTitleTextInputChange(event: Event) {
     // @ts-expect-error
     setTitleTextInputValue(event.target.value);
@@ -41,11 +43,10 @@ export default function TodoListContainer({
           );
         })}
       </ul>
-      <Popup
-        trigger={<button className="add-todo-button">+</button>}
-        modal
-        nested
-      >
+      <button onClick={() => setPopupOpen(true)} className="add-todo-button">
+        +
+      </button>
+      <Popup modal={true} open={popupOpen} onClose={() => setPopupOpen(false)}>
         <div className="blur-backdrop clear-float "></div>
         <div className="add-todo-popup-container">
           <div className="popup-text-container">
@@ -70,11 +71,12 @@ export default function TodoListContainer({
           <input
             type="submit"
             className="submit-button"
-            onClick={() =>
+            onClick={() => {
               addTodoItem(
                 new TodoItem(titleTextInputValue, descriptionTextInputValue, 1)
-              )
-            }
+              );
+              setPopupOpen(false);
+            }}
           ></input>
         </div>
       </Popup>

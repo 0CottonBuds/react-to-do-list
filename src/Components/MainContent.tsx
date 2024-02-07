@@ -2,6 +2,7 @@ import { useState } from "react";
 import TodoListContainer from "./TodoListContainer";
 import TodoListItemInformationContainer from "./TodoListItemInformationContainer";
 import todoJson from "./TodoList.json";
+import { todo } from "node:test";
 
 export class TodoItem {
   title: string;
@@ -26,7 +27,9 @@ export default function MainContent() {
     return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
 
-  function addTodoItem() {
+  function addTodoItem(todoItem: TodoItem) {
+    todoItems.push(todoItem);
+    console.log(todoItems);
     saveTodoItemToJson(todoItems);
   }
 
