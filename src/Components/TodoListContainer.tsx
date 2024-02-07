@@ -38,7 +38,7 @@ export default function TodoListContainer({
               key={index}
               title={item.title}
               index={index}
-              HandleSetIndex={HandleSetIndex}
+              HandleSetIndex={() => HandleSetIndex(index)}
             ></TodoListItem>
           );
         })}

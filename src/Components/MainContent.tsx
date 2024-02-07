@@ -1,8 +1,6 @@
 import { useState } from "react";
 import TodoListContainer from "./TodoListContainer";
 import TodoListItemInformationContainer from "./TodoListItemInformationContainer";
-import todoJson from "./TodoList.json";
-import { todo } from "node:test";
 
 export class TodoItem {
   title: string;
@@ -16,13 +14,27 @@ export class TodoItem {
   }
 }
 
-function saveTodoItemToJson(todoItems: TodoItem[]) {}
+function saveTodoItemToJson(todoItems: TodoItem[]) {
+  let jsonToSave = { todos: [{}] };
+
+  for (let i = 0; i < todoItems.length; i++) {
+    jsonToSave.todos.push({
+      title: todoItems[i].title,
+      description: todoItems[i].description,
+      priorityLevel: 1,
+    });
+  }
+
+  localStorage.setItem("todoItems", JSON.stringify(jsonToSave, null, 2));
+}
 
 export default function MainContent() {
   const [currentSelectedItemIndex, setCurrentSelectedItemIndex] = useState(0);
 
   // get json and add map it to create an array of todoitems
-  const jsonString = todoJson;
+  // @ts-expect-error
+  const jsonString = JSON.parse(localStorage.getItem("todoItems"));
+  // @ts-expect-error
   let todoItems: TodoItem[] = jsonString.todos.map((todo) => {
     return new TodoItem(todo.title, todo.description, todo.priorityLevel);
   });
