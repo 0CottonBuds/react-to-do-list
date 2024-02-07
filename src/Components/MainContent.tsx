@@ -48,6 +48,11 @@ export default function MainContent() {
     saveTodoItemToJson(todoItems);
   }
 
+  function removeTodoItem(index: number) {
+    todoItems.splice(index, 1);
+    saveTodoItemToJson(todoItems);
+  }
+
   function HandleSetIndex(index: number) {
     setCurrentSelectedItemIndex(index);
   }
@@ -60,6 +65,7 @@ export default function MainContent() {
         addTodoItem={addTodoItem}
       ></TodoListContainer>
       <TodoListItemInformationContainer
+        removeItem={removeTodoItem}
         currentItemSelectedIndex={currentSelectedItemIndex}
         Todos={todoItems}
       ></TodoListItemInformationContainer>
