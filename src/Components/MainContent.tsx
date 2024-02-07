@@ -45,7 +45,7 @@ export default function MainContent() {
 
   function addTodoItem(todoItem: TodoItem) {
     // add todo item to end and save to local storage
-    todoItems.concat([todoItem]);
+    todoItems.push(todoItem);
     saveTodoItemsToLocalStorage(todoItems);
   }
 
