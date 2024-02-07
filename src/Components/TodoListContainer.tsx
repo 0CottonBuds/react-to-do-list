@@ -72,6 +72,13 @@ export default function TodoListContainer({
             type="submit"
             className="submit-button"
             onClick={() => {
+              if (
+                titleTextInputValue === "" ||
+                descriptionTextInputValue === ""
+              ) {
+                alert("Please enter values on the fields");
+                return;
+              }
               addTodoItem(
                 new TodoItem(titleTextInputValue, descriptionTextInputValue, 1)
               );
