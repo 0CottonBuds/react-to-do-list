@@ -25,6 +25,9 @@ function saveTodoItemToJson(todoItems: TodoItem[]) {
     });
   }
 
+  jsonToSave.todos.splice(0, 1);
+  console.log(jsonToSave);
+
   localStorage.setItem("todoItems", JSON.stringify(jsonToSave, null, 2));
 }
 
